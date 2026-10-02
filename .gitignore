@@ -3,3 +3,5 @@ __pycache__/ and *.pyc
 .pytest_cache/
 .env and .env.*
 .DS_Store
+__pycache__/
+*.pyc
