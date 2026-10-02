@@ -1,0 +1,40 @@
+# Phase 1 sandbox services only.
+# Python itself is not a pip package. Use Python 3.12 (this machine has 3.12.10).
+# Control-plane tools (Locust, Typer, Docker SDK) stay out until loadgen, deployctl, and chaosctl.
+
+# HTTP services
+fastapi==0.142.2
+uvicorn[standard]==0.54.0
+
+# Config and request models
+pydantic==2.13.5
+pydantic-settings==2.15.0
+
+# Service-to-service calls
+httpx==0.28.1
+
+# Postgres: async driver, query builder, migrations
+asyncpg==0.31.0
+sqlalchemy==2.1.2
+alembic==1.20.0
+
+# Redis client (cart, auth sessions, inventory cache). redis.asyncio is included.
+redis==8.1.0
+
+# Retries and structured logs
+tenacity==9.1.4
+structlog==26.1.0
+
+# OpenTelemetry: traces, metrics, logs over OTLP gRPC, plus auto-instrumentation
+opentelemetry-api==1.45.0
+opentelemetry-sdk==1.45.0
+opentelemetry-exporter-otlp-proto-grpc==1.45.0
+opentelemetry-instrumentation-fastapi==0.66b0
+opentelemetry-instrumentation-httpx==0.66b0
+opentelemetry-instrumentation-asyncpg==0.66b0
+opentelemetry-instrumentation-redis==0.66b0
+
+# Tests and lint for the services
+pytest==9.1.1
+pytest-asyncio==1.4.0
+ruff==0.16.10
